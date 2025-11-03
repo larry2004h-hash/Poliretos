@@ -69,14 +69,44 @@ public class Main {
 
 
 
-        System.out.println("\n=== SERIE DE CARACTERES ===");
+        System.out.println("\n=== SERIE DE CARACTERES 1 ===");
         S1Caracteres serieS1 = new S1Caracteres();
         serieS1.mostrarSeries(n);
 
 
-        System.out.println("\n=== SERIE DE CARACTERES ===");
+        System.out.println("\n=== SERIE DE CARACTERES 2 ===");
         S2Caracteres serieS2 = new S2Caracteres();
         serieS2.mostrarSeries(n);
+
+        System.out.println("\n=== SERIE DE CARACTERES 3 ===");
+        S3Caracteres serieS3 = new S3Caracteres();
+        serieS3.mostrarSeries(n);
+
+        System.out.println("\n=== SERIE DE CARACTERES 4 ===");
+        S4Caracteres serieS4 = new S4Caracteres();
+        serieS4.mostrarSeries(n);
+
+        System.out.println("\n=== SERIE DE CARACTERES 5 ===");
+        S5Caracteres serieS5 = new S5Caracteres();
+        serieS5.mostrarSeries(n);
+
+        System.out.println("\n=== SERIE DE CARACTERES 6 ===");
+        S6Caracteres serieS6 = new S6Caracteres();
+        serieS6.mostrarSeries(n);
+
+        System.out.println("\n=== SERIE DE CARACTERES 7 ===");
+        S7Caracteres serieS7 = new S7Caracteres();
+        serieS7.mostrarSeries(n);
+
+
+        System.out.println("\n=== SERIE DE CARACTERES 8 ===");
+        S8Caracteres serieS8 = new S8Caracteres();
+        serieS8.mostrarSeries(n);
+
+
+        System.out.println("\n=== SERIE DE CARACTERES 9 ===");
+        S9Caracteres serieS9 = new S9Caracteres();
+        serieS9.mostrarSeries(n);
         
 
 

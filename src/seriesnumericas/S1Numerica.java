@@ -5,13 +5,13 @@ public class S1Numerica {
     public void mostrarSeries(int n) {
         System.out.println("\nSerie S1: 0 1 1 2 3 5 8 13 ... (Fibonacci)\n");
 
-        System.out.println("→ Usando FOR:");
+        System.out.println("Usando FOR:");
         g4_S1_for(n);
 
-        System.out.println("\n→ Usando WHILE:");
+        System.out.println("\nUsando WHILE:");
         g4_S1_while(n);
 
-        System.out.println("\n→ Usando DO-WHILE:");
+        System.out.println("\nUsando DO-WHILE:");
         g4_S1_doWhile(n);
     }
 

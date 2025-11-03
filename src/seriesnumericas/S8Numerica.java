@@ -5,13 +5,13 @@ public class S8Numerica {
     public void mostrarSeries(int n) {
         System.out.println("\nSerie S8: 3, 8, 13, 18, 23, 28, ...\n");
 
-        System.out.println("→ Usando FOR:");
+        System.out.println("Usando FOR:");
         g4_S8_for(n);
 
-        System.out.println("\n→ Usando WHILE:");
+        System.out.println("\nUsando WHILE:");
         g4_S8_while(n);
 
-        System.out.println("→ Usando DO-WHILE:");
+        System.out.println("Usando DO-WHILE:");
         g4_S8_doWhile(n);
     }
 

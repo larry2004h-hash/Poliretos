@@ -5,13 +5,13 @@ public class S6Numerica {
     public void mostrarSeries(int n) {
         System.out.println("\nSerie S6: 1, 4, 9, 16, 25, 36 ... (cuadrados perfectos)\n");
 
-        System.out.println("→ Usando FOR:");
+        System.out.println("Usando FOR:");
         g4_S6_for(n);
 
-        System.out.println("\n→ Usando WHILE:");
+        System.out.println("\nUsando WHILE:");
         g4_S6_while(n);
 
-        System.out.println("→ Usando DO-WHILE:");
+        System.out.println("Usando DO-WHILE:");
         g4_S6_doWhile(n);
     }
 
