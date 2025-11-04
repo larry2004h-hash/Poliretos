@@ -5,6 +5,7 @@ import seriescaracteres.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println("==========================================");
+        System.out.println("      Escuela Politécnica Nacional");
         System.out.println("      Proyecto: Poliretos - Series Numéricas");
         System.out.println("Grupo: 4");
         System.out.println("Integrantes:");
