@@ -1,77 +1,62 @@
 package arrays;
 
 public class A02Arrays {
-    public static void main(String[] args) {
-        char inicial1 = 'S';
-        char inicial2 = 'R';
-        int tamaño = 5;
-        char caracter = '*';
+    public void mostrarSeries(int n) {
+        if (n < 3) {
+            System.out.println("Tamaño muy pequeño, usando tamaño 5 por defecto.");
+            n = 5;
+        }
+
+        System.out.println("Iniciales: S  R");
+        System.out.println("Tamaño: " + n + "x" + n + "\n");
 
         System.out.println("=== MÉTODO CON FOR ===");
-        metodoFor(tamaño, caracter, inicial1, inicial2);
+        mostrarConFor(n);
 
         System.out.println("\n=== MÉTODO CON WHILE ===");
-        metodoWhile(tamaño, caracter, inicial1, inicial2);
+        mostrarConWhile(n);
 
         System.out.println("\n=== MÉTODO CON DO...WHILE ===");
-        metodoDoWhile(tamaño, caracter, inicial1, inicial2);
+        mostrarConDoWhile(n);
     }
 
 
 
-    //  Método con FOR
-    public static void metodoFor(int n, char c, char i1, char i2) {
+    // ---------- FOR ----------
+    private void mostrarConFor(int n) {
         for (int fila = 0; fila < n; fila++) {
-            for (int col = 0; col < n * 2 + 1; col++) {
+            for (int col = 0; col < n; col++) {
+                if (esParteDeS(fila, col, n)) System.out.print("*");
+                else System.out.print(" ");
+            }
 
-                
-                if (col < n && (fila == 0 || fila == n - 1 || fila == n / 2 ||
-                        (col == 0 && fila < n / 2) || (col == n - 1 && fila > n / 2))) {
-                    System.out.print(c);
-                }
+            System.out.print("   "); 
 
-                
-                else if (col == n) {
-                    System.out.print(' ');
-                }
-
-        
-                else if (col > n && (fila == 0 || col == n + 1 || fila == n / 2 ||
-                        (col == n + n && fila < n / 2) ||
-                        (fila - (n / 2) == col - (n + 1) && fila > n / 2))) {
-                    System.out.print(c);
-                } else {
-                    System.out.print(' ');
-                }
+            for (int col = 0; col < n; col++) {
+                if (esParteDeR(fila, col, n)) System.out.print("*");
+                else System.out.print(" ");
             }
             System.out.println();
         }
     }
 
-
-
-
-
-    // Método con WHILE
-    public static void metodoWhile(int n, char c, char i1, char i2) {
+    // ---------- WHILE ----------
+    private void mostrarConWhile(int n) {
         int fila = 0;
         while (fila < n) {
             int col = 0;
-            while (col < n * 2 + 1) {
+            while (col < n) {
+                if (esParteDeS(fila, col, n)) System.out.print("*");
+                else System.out.print(" ");
+                col++;
+            }
 
-                if (col < n && (fila == 0 || fila == n - 1 || fila == n / 2 ||
-                        (col == 0 && fila < n / 2) || (col == n - 1 && fila > n / 2))) {
-                    System.out.print(c);
-                } else if (col == n) {
-                    System.out.print(' ');
-                } else if (col > n && (fila == 0 || col == n + 1 || fila == n / 2 ||
-                        (col == n + n && fila < n / 2) ||
-                        (fila - (n / 2) == col - (n + 1) && fila > n / 2))) {
-                    System.out.print(c);
-                } else {
-                    System.out.print(' ');
-                }
+            System.out.print("   ");
+            col = 0;
 
+            while (col < n) {
+                if (esParteDeR(fila, col, n)) System.out.print("*");
+                else System.out.print(" ");
                 col++;
             }
             System.out.println();
@@ -80,34 +65,45 @@ public class A02Arrays {
     }
 
 
-
-
-    // Método con DO...WHILE
-    public static void metodoDoWhile(int n, char c, char i1, char i2) {
+    // ---------- DO...WHILE ----------
+    private void mostrarConDoWhile(int n) {
         int fila = 0;
         do {
             int col = 0;
             do {
-
-                if (col < n && (fila == 0 || fila == n - 1 || fila == n / 2 ||
-                        (col == 0 && fila < n / 2) || (col == n - 1 && fila > n / 2))) {
-                    System.out.print(c);
-                } else if (col == n) {
-                    System.out.print(' ');
-                } else if (col > n && (fila == 0 || col == n + 1 || fila == n / 2 ||
-                        (col == n + n && fila < n / 2) ||
-                        (fila - (n / 2) == col - (n + 1) && fila > n / 2))) {
-                    System.out.print(c);
-                } else {
-                    System.out.print(' ');
-                }
-
+                if (esParteDeS(fila, col, n)) System.out.print("*");
+                else System.out.print(" ");
                 col++;
-            } while (col < n * 2 + 1);
+            } while (col < n);
+
+            System.out.print("   ");
+            col = 0;
+
+            do {
+                if (esParteDeR(fila, col, n)) System.out.print("*");
+                else System.out.print(" ");
+                col++;
+            } while (col < n);
+
             System.out.println();
             fila++;
         } while (fila < n);
     }
+
+    
+    private boolean esParteDeS(int fila, int col, int n) {
+        int mid = n / 2;
+        return fila == 0 || fila == mid || fila == n - 1 ||
+               (fila < mid && col == 0) ||
+               (fila > mid && col == n - 1);
+    }
+
+    private boolean esParteDeR(int fila, int col, int n) {
+        int mid = n / 2;
+        return col == 0 ||
+               fila == 0 ||
+               fila == mid ||
+               (fila < mid && col == n - 1) ||
+               (fila > mid && col == fila - mid);
+    }
 }
-
-

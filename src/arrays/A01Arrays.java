@@ -1,122 +1,77 @@
 package arrays;
-import java.util.Random;
 
 public class A01Arrays {
 
-    public static void main(String[] args) {
+    public void mostrarSeries(int n) {
         String nombre = "Samuel Esteban Robayo Morcillo";
-        String texto = nombre.replace(" ", "");        // quitar espacios
-        char[] letras = texto.toCharArray();
-        int total = letras.length;
+        String[] palabras = nombre.split(" ");
+        int[] porcentajes = {100, 75, 50, 25};
 
-        // tamaño mínimo cuadrado compacto
-        int n = (int) Math.ceil(Math.sqrt(total));
+        System.out.println("=== A01 - BARRAS (FOR) ===");
+        metodoFor(palabras, porcentajes);
 
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Total letras: " + total + " → Matriz " + n + "x" + n);
-        System.out.println();
+        System.out.println("\n=== A01 - BARRAS (WHILE) ===");
+        metodoWhile(palabras, porcentajes);
 
-        System.out.println("=== MÉTODO CON FOR ===");
-        metodoFor(letras, n);
-
-        System.out.println("\n=== MÉTODO CON WHILE ===");
-        metodoWhile(letras, n);
-
-        System.out.println("\n=== MÉTODO CON DO...WHILE ===");
-        metodoDoWhile(letras, n);
+        System.out.println("\n=== A01 - BARRAS (DO...WHILE) ===");
+        metodoDoWhile(palabras, porcentajes);
     }
 
-    // 🔹 MÉTODO CON FOR
-    public static void metodoFor(char[] letras, int n) {
-        char[][] matriz = new char[n][n];
-        Random rand = new Random();
+   
+    private String generarBarra(int porcentaje) {
+        int total = 20; 
+        int filled = porcentaje * total / 100; 
+        if (porcentaje == 100) filled = total;
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < filled; i++) sb.append("=");
+        sb.append(">");
+        for (int i = filled + 1; i < total; i++) sb.append(" ");
+        sb.append("]");
+        return sb.toString();
+    }
 
-        // inicializar con espacios
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++)
-                matriz[i][j] = ' ';
+    
+    private String recortar(String palabra, int porcentaje) {
+        int len = palabra.length();
+        int nuevaLong = (int) Math.ceil(len * (porcentaje / 100.0));
+        if (nuevaLong < 1) nuevaLong = 1;
+        if (nuevaLong > len) nuevaLong = len;
+        return palabra.substring(0, nuevaLong);
+    }
 
-        // colocar letras aleatoriamente
-        for (int k = 0; k < letras.length; k++) {
-            int x = rand.nextInt(n);
-            int y = rand.nextInt(n);
-            if (matriz[x][y] == ' ')
-                matriz[x][y] = letras[k];
-            else
-                matriz[x][y] = '*';
+    // ========================= FOR =========================
+    private void metodoFor(String[] palabras, int[] porcentajes) {
+        int limit = Math.min(palabras.length, porcentajes.length);
+        for (int i = 0; i < limit; i++) {
+            String barra = generarBarra(porcentajes[i]);
+            String rec = recortar(palabras[i], porcentajes[i]);
+            System.out.printf("%s %3d%% %s%n", barra, porcentajes[i], rec);
         }
-
-        mostrarMatriz(matriz);
     }
 
-    // 🔹 MÉTODO CON WHILE
-    public static void metodoWhile(char[] letras, int n) {
-        char[][] matriz = new char[n][n];
-        Random rand = new Random();
-
+    // ========================= WHILE =========================
+    private void metodoWhile(String[] palabras, int[] porcentajes) {
         int i = 0;
-        while (i < n) {
-            int j = 0;
-            while (j < n) {
-                matriz[i][j] = ' ';
-                j++;
-            }
+        int limit = Math.min(palabras.length, porcentajes.length);
+        while (i < limit) {
+            String barra = generarBarra(porcentajes[i]);
+            String rec = recortar(palabras[i], porcentajes[i]);
+            System.out.printf("%s %3d%% %s%n", barra, porcentajes[i], rec);
             i++;
         }
-
-        int k = 0;
-        while (k < letras.length) {
-            int x = rand.nextInt(n);
-            int y = rand.nextInt(n);
-            if (matriz[x][y] == ' ')
-                matriz[x][y] = letras[k];
-            else
-                matriz[x][y] = '*';
-            k++;
-        }
-
-        mostrarMatriz(matriz);
     }
 
-    // 🔹 MÉTODO CON DO...WHILE
-    public static void metodoDoWhile(char[] letras, int n) {
-        char[][] matriz = new char[n][n];
-        Random rand = new Random();
-
+    // ========================= DO...WHILE =========================
+    private void metodoDoWhile(String[] palabras, int[] porcentajes) {
+        int limit = Math.min(palabras.length, porcentajes.length);
+        if (limit == 0) return;
         int i = 0;
         do {
-            int j = 0;
-            do {
-                matriz[i][j] = ' ';
-                j++;
-            } while (j < n);
+            String barra = generarBarra(porcentajes[i]);
+            String rec = recortar(palabras[i], porcentajes[i]);
+            System.out.printf("%s %3d%% %s%n", barra, porcentajes[i], rec);
             i++;
-        } while (i < n);
-
-        int k = 0;
-        do {
-            int x = rand.nextInt(n);
-            int y = rand.nextInt(n);
-            if (matriz[x][y] == ' ')
-                matriz[x][y] = letras[k];
-            else
-                matriz[x][y] = '*';
-            k++;
-        } while (k < letras.length);
-
-        mostrarMatriz(matriz);
-    }
-
-    // 🔸 Mostrar matriz compacta
-    public static void mostrarMatriz(char[][] matriz) {
-        System.out.println();
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                System.out.print(matriz[i][j] + " ");
-            }
-            System.out.println();
-        }
+        } while (i < limit);
     }
 }
-
 

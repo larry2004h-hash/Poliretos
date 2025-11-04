@@ -1,157 +1,108 @@
 package arrays;
 
 public class A03Arrays {
-    public static void main(String[] args) {
-        String nombre = "Samuel"; 
+
+    public void mostrarSeries(int n) {
+        if (n < 1) {
+            System.out.println("El tamaño debe ser mayor a 0. Usando tamaño 6 por defecto.");
+            n = 6;
+        }
+
+        System.out.println("Plano de coordenadas positivas");
+        System.out.println("Función: f(x) = 2x");
+        System.out.println("Nombre usado: SamuelRobayo\n");
+
+        String nombre = "SamuelRobayo";
         char[] letras = nombre.toCharArray();
 
         System.out.println("=== MÉTODO CON FOR ===");
-        metodoFor(letras);
+        metodoFor(n, letras);
 
         System.out.println("\n=== MÉTODO CON WHILE ===");
-        metodoWhile(letras);
+        metodoWhile(n, letras);
 
         System.out.println("\n=== MÉTODO CON DO...WHILE ===");
-        metodoDoWhile(letras);
+        metodoDoWhile(n, letras);
     }
 
-
-
-
-    // Método con FOR
-    public static void metodoFor(char[] letras) {
-        int maxX = letras.length - 1;
-        int maxY = 2 * maxX;
-
-        for (int y = maxY; y >= 0; y--) {
-            System.out.printf("%2d | ", y);
-
-            boolean dibujoHecho = false;
-            for (int x = 0; x <= maxX; x++) {
-                int fx = 2 * x; 
-                if (fx == y) {
-                    System.out.print(letras[x]);
-                    dibujoHecho = true;
-                    break;
-                } else {
-                    System.out.print("   ");
-                }
+    // ---------- FOR ----------
+    private void metodoFor(int n, char[] letras) {
+        int indice = 0;
+        for (int y = n; y >= 0; y--) {
+            System.out.print(y + "|");
+            for (int x = 0; x <= y; x++) {
+                System.out.print(" ");
             }
-            if (!dibujoHecho) System.out.print("");
-            System.out.println();
+            if (indice < letras.length) {
+                System.out.println(letras[indice]);
+                indice++;
+            } else {
+                System.out.println();
+            }
         }
 
-        System.out.print(" 0 |");
-        for (int i = 0; i <= maxX * 3; i++) System.out.print("_");
-        System.out.println();
-
-        System.out.print("     ");
-        for (int i = 0; i <= maxX; i++) System.out.printf("%-3d", i);
+        System.out.print("0|");
+        for (int i = 0; i <= n + 2; i++) System.out.print("_");
         System.out.println();
     }
 
+    // ---------- WHILE ----------
+    private void metodoWhile(int n, char[] letras) {
+        int y = n;
+        int indice = 0;
 
-
-
-
-
-    // Método con WHILE
-    public static void metodoWhile(char[] letras) {
-        int maxX = letras.length - 1;
-        int maxY = 2 * maxX;
-
-        int y = maxY;
         while (y >= 0) {
-            System.out.printf("%2d | ", y);
-
+            System.out.print(y + "|");
             int x = 0;
-            boolean dibujoHecho = false;
-
-            while (x <= maxX) {
-                int fx = 2 * x;
-                if (fx == y) {
-                    System.out.print(letras[x]);
-                    dibujoHecho = true;
-                    break;
-                } else {
-                    System.out.print("   ");
-                }
+            while (x <= y) {
+                System.out.print(" ");
                 x++;
             }
-
-            if (!dibujoHecho) System.out.print("");
-            System.out.println();
+            if (indice < letras.length) {
+                System.out.println(letras[indice]);
+                indice++;
+            } else {
+                System.out.println();
+            }
             y--;
         }
 
+        System.out.print("0|");
         int i = 0;
-        System.out.print(" 0 |");
-        while (i <= maxX * 3) {
+        while (i <= n + 2) {
             System.out.print("_");
             i++;
         }
         System.out.println();
-
-        i = 0;
-        System.out.print("     ");
-        while (i <= maxX) {
-            System.out.printf("%-3d", i);
-            i++;
-        }
-        System.out.println();
     }
 
+    // ---------- DO...WHILE ----------
+    private void metodoDoWhile(int n, char[] letras) {
+        int y = n;
+        int indice = 0;
 
-
-
-
-
-    // Método con DO...WHILE
-    public static void metodoDoWhile(char[] letras) {
-        int maxX = letras.length - 1;
-        int maxY = 2 * maxX;
-
-        int y = maxY;
         do {
-            System.out.printf("%2d | ", y);
-
+            System.out.print(y + "|");
             int x = 0;
-            boolean dibujoHecho = false;
-
             do {
-                int fx = 2 * x;
-                if (fx == y) {
-                    System.out.print(letras[x]);
-                    dibujoHecho = true;
-                    break;
-                } else {
-                    System.out.print("   ");
-                }
+                System.out.print(" ");
                 x++;
-            } while (x <= maxX);
-
-            if (!dibujoHecho) System.out.print("");
-            System.out.println();
+            } while (x <= y);
+            if (indice < letras.length) {
+                System.out.println(letras[indice]);
+                indice++;
+            } else {
+                System.out.println();
+            }
             y--;
         } while (y >= 0);
 
+        System.out.print("0|");
         int i = 0;
-        System.out.print(" 0 |");
         do {
             System.out.print("_");
             i++;
-        } while (i <= maxX * 3);
-        System.out.println();
-
-        i = 0;
-        System.out.print("     ");
-        do {
-            System.out.printf("%-3d", i);
-            i++;
-        } while (i <= maxX);
+        } while (i <= n + 2);
         System.out.println();
     }
 }
-
-
-
