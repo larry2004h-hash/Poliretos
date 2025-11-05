@@ -1,2 +1,5 @@
-bin/ 
-*.class 
+# Ignorar la carpeta de archivos compilados
+/bin/
+
+# Ignorar archivos compilados de Java
+*.class
