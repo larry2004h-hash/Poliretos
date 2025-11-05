@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Base_G4_GrafosAutomatas {
 
