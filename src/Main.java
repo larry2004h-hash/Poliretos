@@ -14,7 +14,8 @@ public class Main {
         System.out.println("      Proyecto: Poliretos - Series Numéricas");
         System.out.println("Grupo: 4");
         System.out.println("Integrantes:"); 
-        System.out.println("-Jhoan Patricio Sasnalema De La Cruz\nRobayo Morcillo Samuel Esteban \nMateo Sebastián Rios Taco");
+        System.out.println("-Jhoan Patricio Sasnalema De La Cruz\nRobayo Morcillo Samuel Esteban \nMateo Sebastián Rios Taco \\n" + //
+                        "Mao Tsetung Rosero Duran");
         System.out.println("==========================================\n");
 
         Scanner sc = new Scanner(System.in);
