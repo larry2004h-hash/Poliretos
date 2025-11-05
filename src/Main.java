@@ -5,7 +5,7 @@ import java.util.Scanner;
 import recursion.*;
 import seriescaracteres.*;
 import seriesnumericas.*;
-
+import grafosAutomatas.*;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -14,7 +14,7 @@ public class Main {
         System.out.println("      Proyecto: Poliretos - Series Numéricas");
         System.out.println("Grupo: 4");
         System.out.println("Integrantes:"); 
-        System.out.println("-Jhoan Patricio Sasnalema De La Cruz\nRobayo Morcillo Samuel Esteban \nMateo Sebastián Rios Taco \\n" + //
+        System.out.println("-Jhoan Patricio Sasnalema De La Cruz\nRobayo Morcillo Samuel Esteban \nMateo Sebastián Rios Taco \nAriel Alejandro Soria Yanez\n" + //
                         "Mao Tsetung Rosero Duran");
         System.out.println("==========================================\n");
 
@@ -327,8 +327,100 @@ public class Main {
         System.out.println("\n=== RECURSIÓN 6 ===");
         R06Recursion rec6 = new R06Recursion();
         rec6.mostrarConteoRegresivo(n);
+    
+     // ================== Grafos ==================
+       System.out.println("\n=== GRAFOS Y AUTÓMATAS 1 ===");
 
+        // A01: a* b+ c  (c exactly one at end)
+        System.out.print("\nIngrese una cadena para el ejercicio A01 (a*b+c): ");
+        String gA01 = sc.nextLine();
+        A01Grafos ga01 = new A01Grafos();
+        System.out.println("Con for");
+        ga01.g4_grafosFor(gA01);
+        System.out.println("Con while");
+        ga01.g4_grafosWhile(gA01);
+        System.out.println("Con do-while");
+        ga01.g4_grafosDoWhile(gA01);
+
+        // A02: a b+ c a  (pattern: a then >=1 b then c then a)
+        System.out.print("\nIngrese una cadena para el ejercicio A02 (ab+ca): ");
+        String gA02 = sc.nextLine();
+        A02Grafos ga02 = new A02Grafos();
+        System.out.println("Con for");
+        ga02.g4_grafosFor(gA02);
+        System.out.println("Con while");
+        ga02.g4_grafosWhile(gA02);
+        System.out.println("Con do-while");
+        ga02.g4_grafosDoWhile(gA02);
+
+        // A03: a+  | b+ | c+  (only a's or only b's or only c's, at least one)
+        System.out.print("\nIngrese una cadena para el ejercicio A03 (a+/b+/c+): ");
+        String gA03 = sc.nextLine();
+        A03Grafos ga03 = new A03Grafos();
+        System.out.println("Con for");
+        ga03.g4_grafosFor(gA03);
+        System.out.println("Con while");
+        ga03.g4_grafosWhile(gA03);
+        System.out.println("Con do-while");
+        ga03.g4_grafosDoWhile(gA03);
+
+        // A04: 1+ 0+ 1*  (one or more '1', then one or more '0', then zero or more '1')
+        System.out.print("\nIngrese una cadena para el ejercicio A04 (1+/0+1*): ");
+        String gA04 = sc.nextLine();
+        A04Grafos ga04 = new A04Grafos();
+        System.out.println("Con for");
+        ga04.g4_grafosFor(gA04);
+        System.out.println("Con while");
+        ga04.g4_grafosWhile(gA04);
+        System.out.println("Con do-while");
+        ga04.g4_grafosDoWhile(gA04);
+
+        // A05: validar número decimal (ej: 123, -12.34, +0.5)
+        System.out.print("\nIngrese una cadena para el ejercicio A05 (numero decimal): ");
+        String gA05 = sc.nextLine();
+        A05Grafos ga05 = new A05Grafos();
+        System.out.println("Con for");
+        ga05.g4_grafosFor(gA05);
+        System.out.println("Con while");
+        ga05.g4_grafosWhile(gA05);
+        System.out.println("Con do-while");
+        ga05.g4_grafosDoWhile(gA05);
+
+        // A06: validar declaracion de variable Java (identificador + ; , = possibly with space)
+        System.out.print("\nIngrese una cadena para el ejercicio A06 (declaracion variable Java): ");
+        String gA06 = sc.nextLine();
+        A06Grafos ga06 = new A06Grafos();
+        System.out.println("Con for");
+        ga06.g4_grafosFor(gA06);
+        System.out.println("Con while");
+        ga06.g4_grafosWhile(gA06);
+        System.out.println("Con do-while");
+        ga06.g4_grafosDoWhile(gA06);
+
+        // A07: validar palabras reservadas {for, if, else, ifelse, foreach} (y permitiendo '(' o ' (' after)
+        System.out.print("\nIngrese una cadena para el ejercicio A07 (keywords for/if/else/ifelse/foreach): ");
+        String gA07 = sc.nextLine();
+        A07Grafos ga07 = new A07Grafos();
+        System.out.println("Con for");
+        ga07.g4_grafosFor(gA07);
+        System.out.println("Con while");
+        ga07.g4_grafosWhile(gA07);
+        System.out.println("Con do-while");
+        ga07.g4_grafosDoWhile(gA07);
+
+        // A08: validador de clave: al menos una mayuscula, una minuscula, un numero, un caracter especial
+        System.out.print("\nIngrese una cadena para el ejercicio A08 (validador de clave): ");
+        String gA08 = sc.nextLine();
+        A08Grafos ga08 = new A08Grafos();
+        System.out.println("Con for");
+        ga08.g4_grafosFor(gA08);
+        System.out.println("Con while");
+        ga08.g4_grafosWhile(gA08);
+        System.out.println("Con do-while");
+        ga08.g4_grafosDoWhile(gA08);
 
         sc.close();
-    }
+        System.out.println("\nProceso de grafos finalizado.");
+    }   
+      
 }
