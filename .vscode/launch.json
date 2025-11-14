@@ -3,24 +3,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "Poliretos_44fec238"
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "Poliretos_997a0e70"
-        },
-        {
-            "type": "java",
-            "name": "A01_G4_GrafosAutomatas",
-            "request": "launch",
-            "mainClass": "GrafosAutomatas.A01_G4_GrafosAutomatas",
-            "projectName": "Poliretos_997a0e70"
+
         },
         {
             "type": "java",

@@ -2,11 +2,8 @@ import arrays.*;
 import cadenas.*;
 import figuras.*;
 import java.util.Scanner;
-import recursion.*;
 import seriescaracteres.*;
 import seriesnumericas.*;
-import grafosAutomatas.*;
-
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("==========================================");
@@ -470,39 +467,6 @@ public class Main {
         System.out.println("\n=== ARREGLO 5 ===");
         A05Array arr5 = new A05Array();
         arr5.mostrarSeries(n);
-
-        System.out.println("\n=== RECURSIÓN 1 ===");
-        R01Recursion rec1 = new R01Recursion();
-        rec1.mostrarFactoriales(n);
-
-
-        System.out.println("\n=== RECURSIÓN 2 ===");
-        R02Recursion rec2 = new R02Recursion();
-        System.out.print("Ingrese el primer número (a): ");
-        int a = sc.nextInt();
-        System.out.print("Ingrese el segundo número (b): ");
-        int b = sc.nextInt();
-        rec2.mostrarSuma(a, b);
-
-
-        System.out.println("\n=== RECURSIÓN 3 ===");
-        R03Recursion rec3 = new R03Recursion();
-        rec3.mostrarMultiplicacion(a, b);
-        
-
-        System.out.println("\n=== RECURSIÓN 4 ===");
-        R04Recursion rec4 = new R04Recursion();
-        rec4.mostrarPotencia(a, b);
-
-
-        System.out.println("\n=== RECURSIÓN 5 ===");
-        R05Recursion rec5 = new R05Recursion();
-        rec5.mostrarConteo(n);
-
-
-        System.out.println("\n=== RECURSIÓN 6 ===");
-        R06Recursion rec6 = new R06Recursion();
-        rec6.mostrarConteoRegresivo(n);
     
      // ================== Grafos ==================
        System.out.println("\n=== GRAFOS Y AUTÓMATAS 1 ===");
