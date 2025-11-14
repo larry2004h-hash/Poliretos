@@ -4,7 +4,6 @@ import figuras.*;
 import java.util.Scanner;
 import seriescaracteres.*;
 import seriesnumericas.*;
-import GrafosAutomatas.*;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("==========================================");

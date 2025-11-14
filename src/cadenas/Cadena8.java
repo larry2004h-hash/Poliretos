@@ -39,7 +39,7 @@ public class Cadena8 {
         }
 
         if (!respuesta.equalsIgnoreCase(anagramaCorrecto)) {
-            System.out.println(" Fallaste. La respuesta correcta era: " + anagramaCorrecto);
+            System.out.println("4 Fallaste. La respuesta correcta era: " + anagramaCorrecto);
         }
 
         sc.close();

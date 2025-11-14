@@ -3,24 +3,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "MainRecursion",
-            "request": "launch",
-            "mainClass": "recursion.MainRecursion",
-            "projectName": "Poliretos_779da819"
-        },
-        {
-            "type": "java",
-            "name": "g4Main",
-            "request": "launch",
-            "mainClass": "leonardo_delay.g4Main",
-            "projectName": "Poliretos_779da819"
-        },
-        {
-            "type": "java",
-            "name": "Main",
-            "request": "launch",
-            "mainClass": "Main",
-            "projectName": "Poliretos_779da819"
+
         },
         {
             "type": "java",
