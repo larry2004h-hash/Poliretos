@@ -1,9 +1,16 @@
 package arrays;
+
+import java.util.Scanner;
+
 public class A04Array {
 
-    public void mostrarSeries(int n) throws InterruptedException {
-        String nombre = "SamuelRobayo";
-        int delay = 20; // milisegundos: mientras más pequeño, más rápido
+    public void mostrarSeries(int n, Scanner sc) throws InterruptedException {
+        
+        
+        System.out.print("Ingrese el nombre a graficar (sin espacios): ");
+        String nombre = sc.nextLine(); 
+
+        int delay = 20; 
 
         System.out.println("\n=== MATRIZ CON BUCLE FOR ===");
         char[][] matrizFor = generarConFor(n, nombre);
@@ -18,25 +25,26 @@ public class A04Array {
         imprimirConDelay(matrizDo, delay);
     }
 
-    // ---------- BUCLE FOR ----------
+
+// ========================== FOR =========================
     private char[][] generarConFor(int n, String nombre) {
         char[][] matriz = new char[n][n];
 
-        // Llenar con espacios
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 matriz[i][j] = ' ';
 
-        // Formar X con letras del nombre
+      
         for (int i = 0; i < n; i++) {
+            if (nombre.length() == 0) continue; 
             char c = nombre.charAt(i % nombre.length());
-            matriz[i][i] = c; // diagonal principal
-            matriz[i][n - 1 - i] = c; // diagonal secundaria
+            matriz[i][i] = c; 
+            matriz[i][n - 1 - i] = c; 
         }
         return matriz;
     }
 
-    // ---------- BUCLE WHILE ----------
+// ========================= WHILE =========================
     private char[][] generarConWhile(int n, String nombre) {
         char[][] matriz = new char[n][n];
 
@@ -52,6 +60,7 @@ public class A04Array {
 
         i = 0;
         while (i < n) {
+            if (nombre.length() == 0) break;
             char c = nombre.charAt(i % nombre.length());
             matriz[i][i] = c;
             matriz[i][n - 1 - i] = c;
@@ -61,12 +70,13 @@ public class A04Array {
         return matriz;
     }
 
-    // ---------- BUCLE DO-WHILE ----------
+   // ========================= DO...WHILE =========================
     private char[][] generarConDoWhile(int n, String nombre) {
         char[][] matriz = new char[n][n];
-        int i = 0;
+    
+        if (n == 0) return matriz; 
 
-        // Llenar con espacios
+        int i = 0;
         do {
             int j = 0;
             do {
@@ -75,6 +85,8 @@ public class A04Array {
             } while (j < n);
             i++;
         } while (i < n);
+
+        if (nombre.length() == 0) return matriz;
 
         i = 0;
         do {

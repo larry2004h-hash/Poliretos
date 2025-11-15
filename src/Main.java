@@ -1,6 +1,15 @@
 import arrays.*;
 import cadenas.*;
 import figuras.*;
+import grafosAutomatas.A01Grafos;
+import grafosAutomatas.A02Grafos;
+import grafosAutomatas.A03Grafos;
+import grafosAutomatas.A04Grafos;
+import grafosAutomatas.A05Grafos;
+import grafosAutomatas.A06Grafos;
+import grafosAutomatas.A07Grafos;
+import grafosAutomatas.A08Grafos;
+
 import java.util.Scanner;
 import seriescaracteres.*;
 import seriesnumericas.*;
@@ -424,7 +433,7 @@ public class Main {
 
 
         Cadena8 c8 = new Cadena8();
-        c8.juegoAnagramas();
+        c8.juegoAnagramas(sc);
        
         //////////////////////////
 
@@ -443,12 +452,13 @@ public class Main {
         System.out.println("Resultado con DO-WHILE: " + resultadoDoWhile7);
 
 
-        // ================== Arreglos ==================
 
 
-        System.out.println("\n=== ARREGLO 1 ===");
+      // ================== Arreglos ==================
+
+      System.out.println("\n=== ARREGLO 1 ===");
         A01Arrays arr1 = new A01Arrays();
-        arr1.mostrarSeries(n);
+        arr1.mostrarSeries(sc);  
 
         System.out.println("\n=== ARREGLO 2 ===");
         A02Arrays arr2 = new A02Arrays();
@@ -456,17 +466,21 @@ public class Main {
 
         System.out.println("\n=== ARREGLO 3 ===");
         A03Arrays arr3 = new A03Arrays();
-        arr3.mostrarSeries(n);
+        arr3.mostrarSeries(n, sc); 
 
 
         System.out.println("\n=== ARREGLO 4 ===");
         A04Array arr4 = new A04Array();
-        arr4.mostrarSeries(n);
+        arr4.mostrarSeries(n, sc);
 
 
         System.out.println("\n=== ARREGLO 5 ===");
         A05Array arr5 = new A05Array();
-        arr5.mostrarSeries(n);
+        arr5.mostrarSeries(n, sc);
+
+
+
+
     
      // ================== Grafos ==================
        System.out.println("\n=== GRAFOS Y AUTÓMATAS 1 ===");

@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Cadena8 {
 
-    public void juegoAnagramas() {
-        Scanner sc = new Scanner(System.in);
+    public void juegoAnagramas(Scanner sc) {
+       
 
         String[] palabras = {"delira", "ballena", "alondra", "españa", "enrique"};
         String[] anagramas = {"lidera", "llenaba", "ladrona", "apañes", "quieren"};
@@ -42,6 +42,6 @@ public class Cadena8 {
             System.out.println("4 Fallaste. La respuesta correcta era: " + anagramaCorrecto);
         }
 
-        sc.close();
+       
     }
 }

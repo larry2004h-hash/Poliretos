@@ -1,13 +1,15 @@
 package arrays;
+import java.util.Scanner; 
 
 public class A01Arrays {
-
-    public void mostrarSeries(int n) {
-        String nombre = "Samuel Esteban Robayo Morcillo";
+    public void mostrarSeries(Scanner sc) {
+        System.out.print("Ingrese un nombre completo (Nombres y Apellidos): ");
+        String nombre = sc.nextLine();
         String[] palabras = nombre.split(" ");
         int[] porcentajes = {100, 75, 50, 25};
 
-        System.out.println("=== A01 - BARRAS (FOR) ===");
+
+        System.out.println("\n=== A01 - BARRAS (FOR) ===");
         metodoFor(palabras, porcentajes);
 
         System.out.println("\n=== A01 - BARRAS (WHILE) ===");
@@ -64,7 +66,7 @@ public class A01Arrays {
     // ========================= DO...WHILE =========================
     private void metodoDoWhile(String[] palabras, int[] porcentajes) {
         int limit = Math.min(palabras.length, porcentajes.length);
-        if (limit == 0) return;
+        if (limit == 0) return; 
         int i = 0;
         do {
             String barra = generarBarra(porcentajes[i]);
@@ -74,4 +76,3 @@ public class A01Arrays {
         } while (i < limit);
     }
 }
-

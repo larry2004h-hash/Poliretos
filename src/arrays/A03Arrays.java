@@ -1,8 +1,11 @@
 package arrays;
 
+import java.util.Scanner;
+
 public class A03Arrays {
 
-    public void mostrarSeries(int n) {
+
+    public void mostrarSeries(int n, Scanner sc) {
         if (n < 1) {
             System.out.println("El tamaño debe ser mayor a 0. Usando tamaño 6 por defecto.");
             n = 6;
@@ -10,9 +13,13 @@ public class A03Arrays {
 
         System.out.println("Plano de coordenadas positivas");
         System.out.println("Función: f(x) = 2x");
-        System.out.println("Nombre usado: SamuelRobayo\n");
+        
+ 
+        System.out.print("Ingrese el nombre a graficar (sin espacios): ");
+        String nombre = sc.nextLine(); 
+        System.out.println("Nombre usado: " + nombre + "\n");
 
-        String nombre = "SamuelRobayo";
+     
         char[] letras = nombre.toCharArray();
 
         System.out.println("=== MÉTODO CON FOR ===");
@@ -25,7 +32,7 @@ public class A03Arrays {
         metodoDoWhile(n, letras);
     }
 
-    // ---------- FOR ----------
+   // ========================= FOR =========================
     private void metodoFor(int n, char[] letras) {
         int indice = 0;
         for (int y = n; y >= 0; y--) {
@@ -41,12 +48,12 @@ public class A03Arrays {
             }
         }
 
-        System.out.print("0|");
+   
         for (int i = 0; i <= n + 2; i++) System.out.print("_");
         System.out.println();
     }
 
-    // ---------- WHILE ----------
+   // ========================= WHILE =========================
     private void metodoWhile(int n, char[] letras) {
         int y = n;
         int indice = 0;
@@ -67,7 +74,7 @@ public class A03Arrays {
             y--;
         }
 
-        System.out.print("0|");
+   
         int i = 0;
         while (i <= n + 2) {
             System.out.print("_");
@@ -76,7 +83,7 @@ public class A03Arrays {
         System.out.println();
     }
 
-    // ---------- DO...WHILE ----------
+    // ========================= DO...WHILE =========================
     private void metodoDoWhile(int n, char[] letras) {
         int y = n;
         int indice = 0;
@@ -97,7 +104,7 @@ public class A03Arrays {
             y--;
         } while (y >= 0);
 
-        System.out.print("0|");
+      
         int i = 0;
         do {
             System.out.print("_");
