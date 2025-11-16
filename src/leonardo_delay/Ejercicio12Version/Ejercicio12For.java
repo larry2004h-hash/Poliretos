@@ -1,9 +1,9 @@
-package leonardo_delay;
+package leonardo_delay.Ejercicio12Version;
 
-public class Ejercicio12 {
+public class Ejercicio12For {
     public static void g4_animarFigura() throws InterruptedException {
         String[] figura = {
-            "   \\|||/",
+            "   \\||//",
             "   (> <)",
             "ooO-(_)-Ooo"
         };
@@ -12,12 +12,12 @@ public class Ejercicio12 {
 
         for (int ciclo = 0; ciclo < 2; ciclo++) {
             for (int desplazamiento = 0; desplazamiento <= maxDesplazamiento; desplazamiento++) {
-                System.out.print("\033[H\033[2J"); // limpiar pantalla
+                System.out.print("\033[H\033[2J");
                 System.out.flush();
 
                 String espacios = " ".repeat(desplazamiento);
                 for (String linea : figura) {
-                    System.out.println("\033[36m" + espacios + linea + "\033[0m"); // color cian
+                    System.out.println("\033[36m" + espacios + linea + "\033[0m");
                 }
                 Thread.sleep(100);
             }
@@ -33,9 +33,5 @@ public class Ejercicio12 {
                 Thread.sleep(100);
             }
         }
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        g4_animarFigura();
     }
 }

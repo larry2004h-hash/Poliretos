@@ -1,12 +1,8 @@
-package leonardo_delay;
+package leonardo_delay.Ejercicio11Version;
 
 import java.util.Random;
 
-public class Ejercicio11 {
-
-    public static void main(String[] args) throws InterruptedException {
-        g4_animarSenal();
-    }
+public class Ejercicio11For {
 
     public static void g4_animarSenal() throws InterruptedException {
         Random random = new Random();

@@ -1,6 +1,6 @@
-package leonardo_delay;
+package leonardo_delay.Ejercicio07Version;
 
-public class Ejercicio07 {
+public class Ejercicio07For {
     public static void g4_cargarRotacionPunta() throws InterruptedException {
         int longitud = 20;
         int delay = 100;

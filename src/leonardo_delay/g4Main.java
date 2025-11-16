@@ -1,4 +1,18 @@
 package leonardo_delay;
+
+import leonardo_delay.Ejercicio01Version.Ejercicio01Controller;
+import leonardo_delay.Ejercicio02Version.Ejercicio02Controller;
+import leonardo_delay.Ejercicio03Version.Ejercicio03Controller;
+import leonardo_delay.Ejercicio04Version.Ejercicio04Controller;
+import leonardo_delay.Ejercicio05Version.Ejercicio05Controller;
+import leonardo_delay.Ejercicio06Version.Ejercicio06Controller;
+import leonardo_delay.Ejercicio07Version.Ejercicio07Controller;
+import leonardo_delay.Ejercicio08Version.Ejercicio08Controller;
+import leonardo_delay.Ejercicio09Version.Ejercicio09Controller;
+import leonardo_delay.Ejercicio10Version.Ejercicio10Controller;
+import leonardo_delay.Ejercicio11Version.Ejercicio11Controller;
+import leonardo_delay.Ejercicio12Version.Ejercicio12Controller;
+
 public class g4Main {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("==================================");
@@ -13,51 +27,41 @@ public class g4Main {
         System.out.println("==================================");
 
         System.out.println("\n--- Ejecutando Ejercicio 1 ---");
-        Ejercicio01.g4_cargarIndicador();
+        Ejercicio01Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 2 ---");
-        Ejercicio02.g4_cargarBarra();
+        Ejercicio02Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 3 ---");
-        Ejercicio03.g4_cargarDesplazamiento();
+        Ejercicio03Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 4 ---");
-        
-        Ejercicio04.g4_cargarWaiting();
+        Ejercicio04Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 5 ---");
-        Ejercicio05.g4_cargarPuntaAlterna();
+        Ejercicio05Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 6 ---");
-        Ejercicio06.g4_cargarDesplazamientoPunta();
+        Ejercicio06Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 7 ---");
-        Ejercicio07.g4_cargarRotacionPunta();
+        Ejercicio07Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 8 ---");
-        Ejercicio08.g4_cargarNombre();
+        Ejercicio08Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 9 ---");
-        Ejercicio09.g4_cargarLetraPorLetra();
+        Ejercicio09Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 10 ---");
-        Ejercicio10.g4_descargarArchivo();
+        Ejercicio10Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 11 ---");
-        Ejercicio11.g4_animarSenal();
+        Ejercicio11Controller.ejecutar();
 
         System.out.println("\n--- Ejecutando Ejercicio 12 ---");
-        Ejercicio12.g4_animarFigura();
+        Ejercicio12Controller.ejecutar();
         
-
-
-
-
-
-
-
-
-
     }
 }
 

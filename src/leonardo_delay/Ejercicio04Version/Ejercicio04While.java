@@ -1,5 +1,5 @@
-package leonardo_delay;
-public class Ejercicio04 {
+package leonardo_delay.Ejercicio04Version;
+public class Ejercicio04While {
 
     public static void g4_cargarWaiting() throws InterruptedException {
         int porcentaje = 0;
