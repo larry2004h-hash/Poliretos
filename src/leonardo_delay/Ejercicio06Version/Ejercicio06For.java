@@ -1,6 +1,6 @@
-package leonardo_delay;
+package leonardo_delay.Ejercicio06Version;
 
-public class Ejercicio06 {
+public class Ejercicio06For {
     public static void g4_cargarDesplazamientoPunta() throws InterruptedException {
         int longitud = 20;
         int delay = 100;

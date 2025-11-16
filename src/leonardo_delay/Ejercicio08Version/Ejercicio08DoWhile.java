@@ -1,8 +1,8 @@
-package leonardo_delay;
+package leonardo_delay.Ejercicio08Version;
 
 import java.util.Scanner;
 
-public class Ejercicio08 {
+public class Ejercicio08DoWhile {
     public static void g4_cargarNombre() throws InterruptedException {
         Scanner sc = new Scanner(System.in);
         System.out.print("Ingrese su nombre y apellidos: ");
@@ -14,23 +14,31 @@ public class Ejercicio08 {
 
         System.out.println("\nCargando nombre...\n");
 
-        for (int i = 0; i <= letras; i++) {
+        int i = 0;
+        do {
 
             String parte = nombre.substring(0, i);
 
             StringBuilder barra = new StringBuilder(parte);
-            for (int j = i; j < longitudTotal; j++) {
-                barra.append(" ");
-            }
 
-            // porcentaje
+            int j = i;
+            do {
+                if (j >= longitudTotal) break;
+                barra.append(" ");
+                j++;
+            } while (j < longitudTotal);
+
             int porcentaje = (i * 100) / letras;
             if (porcentaje > 100) porcentaje = 100;
 
             System.out.print("\r[" + barra + "] " + porcentaje + "%");
             Thread.sleep(delay);
-        }
+
+            i++;
+
+        } while (i <= letras);
 
         System.out.println("\n\nCarga completada");
     }
 }
+

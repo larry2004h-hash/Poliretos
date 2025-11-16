@@ -1,11 +1,11 @@
-package leonardo_delay;
+package leonardo_delay.Ejercicio05Version;
 
-public class Ejercicio05 {
-
+public class Ejercicio05While {
     public static void g4_cargarPuntaAlterna() throws InterruptedException {
         final int LONGITUD = 20;
         final int DELAY_MS = 100;
-        for (int percent = 0; percent <= 100; percent += 5) {
+        int percent=0;
+        while (percent<=100) {
             int llenas = (percent * LONGITUD) / 100;
 
             String barra;
@@ -27,8 +27,10 @@ public class Ejercicio05 {
             System.out.flush();
 
             Thread.sleep(DELAY_MS);
+            percent+=5;
         }
 
         System.out.println("\nCarga completada.");
     }
+
 }

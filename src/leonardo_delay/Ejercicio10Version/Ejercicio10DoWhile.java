@@ -1,8 +1,9 @@
-package leonardo_delay;
+package leonardo_delay.Ejercicio10Version;
 
 import java.util.Random;
 
-public class Ejercicio10 {
+public class Ejercicio10DoWhile {
+
     public static void g4_descargarArchivo() throws InterruptedException {
         Random random = new Random();
 
@@ -17,8 +18,7 @@ public class Ejercicio10 {
         final String VERDE = "\u001B[32m";
         final String CYAN = "\u001B[36m";
 
-
-        while (descargado < total) {
+        do {
             descargado += random.nextDouble() * 5;
             if (descargado > total) descargado = total;
 
@@ -27,18 +27,16 @@ public class Ejercicio10 {
 
             String barra = "━".repeat(llenos) + " ".repeat(anchoBarra - llenos);
 
-            System.out.printf(
-                "\r%s%s%s %.1f / %.1f kB",
-                VERDE,
-                barra,
-                RESET,
-                descargado,
-                total
-            );
+            System.out.printf("\r%s%s%s %.1f / %.1f kB",VERDE,barra,RESET,descargado,total);
+
+            if (descargado >= total) break;
+
             System.out.flush();
             Thread.sleep(200);
-        }
+
+        } while (true);
 
         System.out.printf("\n%sDescarga completada correctamente %s\n", CYAN, RESET);
     }
 }
+

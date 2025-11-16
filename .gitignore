@@ -2,4 +2,4 @@
 /bin/
 
 # Ignorar archivos compilados de Java
-*.class
+*.class".vscode/" 
