@@ -3,7 +3,13 @@
     "configurations": [
         {
             "type": "java",
-
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Poliretos_e0d8625a"
+        },
+        {
+            "type": "java"
         },
         {
             "type": "java",

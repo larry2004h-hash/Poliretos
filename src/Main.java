@@ -1,18 +1,13 @@
 import arrays.*;
 import cadenas.*;
 import figuras.*;
-import grafosAutomatas.A01Grafos;
-import grafosAutomatas.A02Grafos;
-import grafosAutomatas.A03Grafos;
-import grafosAutomatas.A04Grafos;
-import grafosAutomatas.A05Grafos;
-import grafosAutomatas.A06Grafos;
-import grafosAutomatas.A07Grafos;
-import grafosAutomatas.A08Grafos;
+import grafosAutomatas.*;
 
 import java.util.Scanner;
 import seriescaracteres.*;
 import seriesnumericas.*;
+
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("==========================================");
