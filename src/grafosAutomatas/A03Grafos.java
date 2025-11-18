@@ -1,7 +1,7 @@
 package grafosAutomatas;
 
 public class A03Grafos {
-    // pattern: a+ | b+ | c+  (one or more of the same letter: 'a' or 'b' or 'c')
+    // pattern: a+ | b+ | c+  
     public void g4_grafosFor(String s) {
         if (s.length() == 0) { System.out.println("La cadena No acepta"); return; }
         char first = s.charAt(0);

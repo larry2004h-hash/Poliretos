@@ -2,24 +2,24 @@ package grafosAutomatas;
 
 public class A06Grafos {
     // validar declaración de variable Java:
-    // identifier: starts with letter [a-z], then letters/digits/_/$, then optional spaces then one of ; , =
+    // 
     public void g4_grafosFor(String s) {
         if (s == null) { System.out.println("La cadena No acepta"); return; }
         String str = s;
         int len = str.length();
         int i = 0;
 
-        // skip leading spaces
+
         while (i < len && str.charAt(i) == ' ') i++;
 
         if (i >= len) { System.out.println("La cadena No acepta"); return; }
 
-        // first char must be a letter (lowercase considered in alphabet)
+
         char ch0 = str.charAt(i);
         if (!isLetter(ch0)) { System.out.println("La cadena No acepta"); return; }
         i++;
 
-        // identifier body
+ 
         for (; i < len; i++) {
             char ch = str.charAt(i);
             if (isLetter(ch) || isDigit(ch) || ch == '_' || ch == '$') {
@@ -29,10 +29,10 @@ public class A06Grafos {
             }
         }
 
-        // skip spaces
+
         while (i < len && str.charAt(i) == ' ') i++;
 
-        // now must have one of ; , =
+
         if (i < len) {
             char last = str.charAt(i);
             if (last == ';' || last == ',' || last == '=') {
@@ -42,7 +42,7 @@ public class A06Grafos {
                 System.out.println("La cadena No acepta");
             }
         } else {
-            // nothing after identifier -> not acceptable (should have terminator)
+          
             System.out.println("La cadena No acepta");
         }
     }
@@ -53,7 +53,7 @@ public class A06Grafos {
         int len = str.length();
         int i = 0;
 
-        // skip leading spaces
+
         while (i < len && str.charAt(i) == ' ') i++;
 
         if (i >= len) { System.out.println("La cadena No acepta"); return; }
@@ -85,7 +85,7 @@ public class A06Grafos {
         int len = str.length();
         int i = 0;
 
-        // skip leading spaces
+       
         if (len == 0) { System.out.println("La cadena No acepta"); return; }
         do {
             if (i < len && str.charAt(i) == ' ') i++;
@@ -108,7 +108,6 @@ public class A06Grafos {
             } while (i < len);
         }
 
-        // skip trailing spaces
         while (i < len && str.charAt(i) == ' ') i++;
 
         if (i < len) {

@@ -1,7 +1,7 @@
 package grafosAutomatas;
 
 public class A08Grafos {
-    // Password validator: at least one uppercase, one lowercase, one digit, one special character
+    
     public void g4_grafosFor(String s) {
         if (s == null || s.length() == 0) { System.out.println("La cadena No acepta"); return; }
         boolean hasUpper = false;

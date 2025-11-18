@@ -1,13 +1,13 @@
 package grafosAutomatas;
 
 public class A04Grafos {
-    // pattern: 1+ 0+ 1*  (one or more '1', then one or more '0', then zero or more '1')
+    // pattern: 1+ 0+ 1*  
     public void g4_grafosFor(String s) {
         int len = s.length();
         if (len == 0) { System.out.println("La cadena No acepta"); return; }
 
         int i;
-        int state = 0; // 0: reading leading 1+, 1: reading 0+ (at least one), 2: trailing 1*
+        int state = 0; 
         int count1 = 0;
         int count0 = 0;
 

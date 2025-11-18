@@ -1,8 +1,7 @@
 package grafosAutomatas;
 
 public class A07Grafos {
-    // Validate if input begins with one of the keywords: for, if, else, ifelse, foreach
-    // and next char is '(' or spaces then '('.
+
     private String[] keys = {"for", "ifelse", "foreach", "if", "else"};
 
     public void g4_grafosFor(String s) {

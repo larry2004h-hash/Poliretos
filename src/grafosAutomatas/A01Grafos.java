@@ -2,9 +2,9 @@ package grafosAutomatas;
 
 public class A01Grafos {
 
-    // pattern: a* b+ c  (zero or more 'a', one or more 'b', exactly one 'c' at end)
+    // a* b+ c  
     public void g4_grafosFor(String s) {
-        int state = 0; // 0: reading a's, 1: reading b's (>=1), 2: saw c (accept if end)
+        int state = 0; 
         int i;
         boolean accept = false;
         int len = s.length();

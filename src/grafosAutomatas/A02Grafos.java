@@ -1,9 +1,9 @@
 package grafosAutomatas;
 
 public class A02Grafos {
-    // pattern assumed: a b+ c a  (starts with 'a', then >=1 'b', then 'c', then 'a')
+    //a b+ c a  
     public void g4_grafosFor(String s) {
-        int state = 0; // 0: expect 'a' start, 1: b+, 2: expect c, 3: expect final a
+        int state = 0; 
         int len = s.length();
         int i;
         int countB = 0;
